@@ -77,5 +77,16 @@ Avoid unescaped user controlled content in EL as it results in XSS.
 ]]>
         </example>
     </rule>
-
+<rule name="Using external Javascript" language="vf" message="Salesforce advises against using external resources and suggests that the reference library be uploaded as a static resourcE" class="net.sourceforge.pmd.lang.rule.XPathRule">
+	<description> Referencing an external library goes against Salesforce best practices. </description>
+	<priority>3</priority>
+	<properties>
+		<property name="version" value="2.0"/>
+		<property name="xpath">
+			<value>
+				<![CDATA[ /Attribute[@Name="src"] ]]>
+			</value>
+		</property>
+	</properties>
+</rule>
 </ruleset>
